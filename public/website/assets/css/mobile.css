@@ -1,0 +1,16 @@
+img.mob-img {
+    width: 250px;
+    height: 400px;
+}
+@media screen and (max-width: 992px) {
+    img.mob-img {
+        width: 200px;
+        height: 400px;
+    }
+}
+@media screen and (max-width: 600px) {
+    img.mob-img {
+        width: 100px;
+        height: auto;
+    }
+}
