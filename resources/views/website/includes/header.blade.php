@@ -18,11 +18,11 @@
                 <nav id="sideNav" class="mainmenu-nav navbar-example2 d-none d-xl-block onepagenav">
                     <!-- Start Mainmanu Nav -->
                     <ul class="primary-menu nav nav-pills">
-                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                        <li class="nav-item current"><a class="nav-link" href="#home">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Projects</a></li>
                         <li class="nav-item"><a class="nav-link" href="#features">Services</a></li>
                         <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
-                        <li class="nav-item current"><a class="nav-link" href="#testimonial">Testimonial</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#testimonial">Testimonial</a></li>
                         <li class="nav-item"><a class="nav-link" href="#blog">blog</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">My Team</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contacts">Contact</a></li>
@@ -31,9 +31,10 @@
                 </nav>
                 <!-- Start Header Right  -->
                 <div class="header-right">
-                    <a class="rn-btn" target="_blank" href="{{ route('document.download') }}"><span>Download CV</span></a>
+                    <a class="rn-btn" target="_blank" href="{{ $docDownload->file }}"><span>Download CV</span></a>
                     <div class="hamberger-menu d-block d-xl-none">
                         <i id="menuBtn" class="feather-menu humberger-menu"></i>
+{{--                        {{ route('document.download') }}--}}
                     </div>
                     <div class="close-menu d-block">
                             <span class="closeTrigger">

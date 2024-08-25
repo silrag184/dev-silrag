@@ -25,5 +25,17 @@
 <!-- init js -->
 <script src="{{ asset('/') }}admin/assets/js/pages/form-editor.init.js"></script>
 
+<script src="{{ asset('/') }}admin/assets/libs/summernote-editor/summernote1.js"></script>
+<script src="{{ asset('/') }}admin/assets/js/summernote.js"></script>
+<script src="{{ asset('/') }}admin/assets/plugin/databasic/summernote-ext-databasic.js"></script>
+<script src="{{ asset('/') }}admin/assets/plugin/hello/summernote-ext-hello.js"></script>
+<script src="{{ asset('/') }}admin/assets/plugin/specialchars/summernote-ext-specialchars.js"></script>
+
+
+
+{{--<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>--}}
+
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+
 
 

@@ -15,6 +15,7 @@ use App\Models\MyProjects;
 use App\Models\MyServices;
 use App\Models\Profile;
 use App\Models\TeamInfo;
+use App\Models\Testimonial;
 use App\Models\Website;
 use Illuminate\Http\Request;
 
@@ -32,6 +33,8 @@ class WebsiteController extends Controller
             'teams' => TeamInfo::all(),
             'myProjects' => MyProjects::where('status', 1)->latest()->take(3)->get(),
             'myServices' => MyServices::where('status', 1)->latest()->take(3)->get(),
+            'docDownload' => DocDownload::where('status',1)->first(),
+            'testimonials' => Testimonial::where('status',1)->latest()->take(5)->get()
 
         ]);
     }

@@ -7,7 +7,7 @@ use App\Models\DocDownload;
 use App\Models\Profile;
 use Illuminate\Http\Request;
 
-class DocDownloadCOntroller extends Controller
+class DocDownloadController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -44,8 +44,8 @@ class DocDownloadCOntroller extends Controller
      */
     public function show(string $id)
     {
-        DocDownload::downloadDocument($id);
-        return back();
+        DocDownload::docStatus($id);
+        return back()->with('message','Status Updated Successfully');
     }
 
     /**
@@ -53,7 +53,10 @@ class DocDownloadCOntroller extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('admin.document.edit',[
+            'profiles' => Profile::first(),
+            'docDownload' => DocDownload::find($id)
+        ]);
     }
 
     /**
@@ -61,7 +64,8 @@ class DocDownloadCOntroller extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        DocDownload::updateDocument($request, $id);
+        return redirect('/docDownload')->with('message','Your CV Updated Successfully');
     }
 
     /**
@@ -69,7 +73,8 @@ class DocDownloadCOntroller extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        DocDownload::deleteDocument($id);
+        return back()->with('message','Document Deleted Successfully');
     }
 
 

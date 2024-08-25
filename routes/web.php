@@ -15,8 +15,8 @@ use App\Http\Controllers\admin\ExperienceController;
 use App\Http\Controllers\admin\TeamInfoController;
 use App\Http\Controllers\admin\MyProjectsController;
 use App\Http\Controllers\admin\MyServicesController;
-use App\Http\Controllers\admin\DocDownloadCOntroller;
-use App\Http\Controllers\admin\CvDownloadController;
+use App\Http\Controllers\admin\DocDownloadController;
+use App\Http\Controllers\admin\TestimonialController;
 
 
 //frontend routes start
@@ -25,8 +25,6 @@ Route::get('/all/blog',[WebsiteController::class,'blog'])->name('all.blogs');
 Route::get('/all/projects',[WebsiteController::class,'projects'])->name('all.projects');
 Route::post('/client-contact',[WebsiteController::class,'clientContact'])->name('client.contact');
 
-//Route for download document
-Route::get('/document/download',[CvDownloadController::class,'documentDownload'])->name('document.download');
 
 //frontend routes end
 
@@ -60,6 +58,9 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 
     //Route for Download CV
     Route::resources(['docDownload' => DocDownloadController::class]);
+
+    //Route for Testimonial
+    Route::resources(['testimonial' => TestimonialController::class]);
 
 });
 //backend routes end

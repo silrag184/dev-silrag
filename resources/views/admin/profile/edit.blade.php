@@ -66,7 +66,7 @@
                                     </div>
                                     <div class="mb-4">
                                         <label class="form-label" for="form-sm-input">Description</label>
-                                        <textarea class="form-control form-control-sm" id="ckeditor-classic" type="text" name="m_description" placeholder="Write Desc....">{{ $profile->m_description }}</textarea>
+                                        <textarea class="form-control form-control-sm "id="summernote"  type="text" name="m_description" placeholder="Write Desc....">{{ $profile->m_description }}</textarea>
                                     </div>
                                     <div class="mb-4">
                                         <label class="form-label" for="default-input">Note</label>

@@ -1,0 +1,27 @@
+@font-face {
+    font-display: auto;
+    font-family: summernote;
+    font-style: normal;
+    font-weight: 400;
+    src: url(../libs/summernote-editor/font/summernote.eot);
+    src: url(../libs/summernote-editor/font/summernoted41d.eot?#iefix) format("embedded-opentype"), url(../libs/summernote-editor/font/summernote.woff2) format("woff2"), url(../libs/summernote-editor/font/summernote.woff) format("woff"), url(../libs/summernote-editor/font/summernote.ttf) format("truetype")
+}
+
+[class*=note-icon]:before,
+[class^=note-icon]:before {
+    text-rendering: auto;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    speak: none;
+    display: inline-block;
+    font-family: summernote;
+    font-size: inherit;
+    font-style: normal;
+    text-decoration: inherit;
+    text-transform: none;
+    vertical-align: middle
+}
+
+.note-icon-summernote:before {
+    content: "\ea30"
+}

@@ -26,7 +26,6 @@ class DocDownload extends Model
 
     public static function saveDocument($request){
 
-
         if ($request->file('file'))
         {
             self::$fileUrl = self::getDocUrl($request);
@@ -38,5 +37,46 @@ class DocDownload extends Model
         self::$docDownload->file = self::$fileUrl;
         self::$docDownload->save();
     }
+
+    public static function updateDocument($request, $id){
+
+        self::$docDownload = DocDownload::find($id);
+
+        if ($request->file('file')){
+            if (file_exists(self::$docDownload->file)){
+                unlink(self::$docDownload->file);
+            }
+            self::getDocUrl($request);
+        }
+        else{
+            self::$fileUrl = self::$docDownload->file;
+        }
+
+        self::$docDownload->file = self::$fileUrl;
+        self::$docDownload->save();
+    }
+
+    public static function docStatus($id){
+        self::$docDownload = DocDownload::find($id);
+        if (self::$docDownload->status == 1){
+            self::$docDownload->status = 0;
+        }
+        else{
+            self::$docDownload->status = 1;
+        }
+        self::$docDownload->save();
+    }
+
+    public static function deleteDocument($id){
+        self::$docDownload = DocDownload::find($id);
+        if (file_exists(self::$docDownload->file)){
+            unlink(self::$docDownload->file);
+        }
+        if (file_exists(self::$docDownload->file)){
+            unlink(self::$docDownload->file);
+        }
+        self::$docDownload->delete();
+    }
+
 
 }
